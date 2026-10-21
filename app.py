@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 st.set_page_config(page_title="Solar Output Forecasting", page_icon="☀️", layout="wide")
 ROOT = Path(__file__).resolve().parent
-DATA_PATH = ROOT / "data" / "solar_weather_data.csv"
+DATA_PATH = ROOT / "solar_weather_data.csv"
 FEATURES = ["temperature_c", "humidity_pct", "wind_speed_ms", "irradiance_wm2", "cloud_cover_pct", "panel_temperature_c"]
 TARGET = "daily_energy_kwh"
 
