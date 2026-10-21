@@ -70,7 +70,15 @@ with right:
 
 st.subheader("Model evaluation: held-out test data")
 actual_pred = test_results.reset_index(drop=True).head(100)
-st.plotly_chart(px.scatter(actual_pred, x="Actual (kWh)", y="Predicted (kWh)", title="Actual vs predicted generation", trendline="ols"), use_container_width=True)
+st.plotly_chart(
+    px.scatter(
+        actual_pred,
+        x="Actual (kWh)",
+        y="Predicted (kWh)",
+        title="Actual vs predicted generation",
+    ),
+    use_container_width=True,
+)
 with st.expander("View sample data"):
     st.dataframe(df.tail(30), use_container_width=True)
     st.download_button("Download dataset CSV", data=df.to_csv(index=False).encode("utf-8"), file_name="solar_weather_data.csv", mime="text/csv")
